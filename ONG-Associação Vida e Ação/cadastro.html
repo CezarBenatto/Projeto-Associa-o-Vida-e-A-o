@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cadastro — Associação Vida e Ação</title>
+  <meta name="description" content="Formulário de cadastro para voluntários e doadores." />
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand"><img src="assets/img/logo.svg" alt="Logo Associação Vida e Ação" class="logo"></a>
+      <nav aria-label="Menu principal">
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Cadastro</h1>
+    <p>Preencha os dados abaixo. Campos com <abbr title="obrigatório">*</abbr> são obrigatórios.</p>
+
+    <form id="formCadastro" novalidate>
+      <fieldset>
+        <legend>Dados Pessoais</legend>
+
+        <label for="nome">Nome completo *</label>
+        <input id="nome" name="nome" type="text" required minlength="3" />
+
+        <label for="email">E‑mail *</label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="cpf">CPF *</label>
+        <input id="cpf" name="cpf" type="text" inputmode="numeric" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" required />
+
+        <label for="telefone">Telefone *</label>
+        <input id="telefone" name="telefone" type="tel" inputmode="tel" placeholder="(00) 00000-0000" required />
+
+        <label for="nascimento">Data de nascimento *</label>
+        <input id="nascimento" name="nascimento" type="date" required />
+      </fieldset>
+
+      <fieldset>
+        <legend>Endereço</legend>
+        <label for="cep">CEP *</label>
+        <input id="cep" name="cep" type="text" inputmode="numeric" placeholder="00000-000" required />
+
+        <label for="endereco">Endereço</label>
+        <input id="endereco" name="endereco" type="text" value="Av. das Flores, 456 — Jardim Esperança — São Paulo / SP" />
+
+        <label for="cidade">Cidade</label>
+        <input id="cidade" name="cidade" type="text" value="São Paulo" />
+
+        <label for="estado">Estado</label>
+        <select id="estado" name="estado">
+          <option value="">Selecione</option>
+          <option value="SP" selected>SP</option>
+          <option value="RJ">RJ</option>
+          <option value="MG">MG</option>
+          <!-- adicionar demais estados -->
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Interesse</legend>
+        <label for="interesse">Sou *</label>
+        <select id="interesse" name="interesse" required>
+          <option value="">Selecione</option>
+          <option value="voluntario">Voluntário</option>
+          <option value="doador">Doador</option>
+          <option value="parceiro">Parceiro</option>
+        </select>
+
+        <label for="mensagem">Mensagem / Observações</label>
+        <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+      </fieldset>
+
+      <button type="submit">Enviar cadastro</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year3"></span> Associação Vida e Ação</small>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Ação de saúde">
+  <rect width="800" height="500" rx="16" fill="#fff"/>
+  <rect x="20" y="20" width="760" height="200" rx="12" fill="#bbf7d0"/>
+  <text x="40" y="110" font-size="36" font-family="Arial" fill="#065f46">Ação de Saúde</text>
+  <rect x="80" y="260" width="640" height="160" rx="10" fill="#f1f5f9"/>
+</svg>

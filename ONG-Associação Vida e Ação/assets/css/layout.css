@@ -1,0 +1,120 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--font-base);
+  font-size: var(--fs-md);
+  color: var(--color-neutral-900);
+  background: var(--color-neutral-200);
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  width: min(1200px, 90%);
+  margin-inline: auto;
+}
+
+/* Grid principal */
+.grid {
+  display: grid;
+  gap: var(--space-2);
+  grid-template-columns: repeat(12, 1fr);
+}
+
+/* Breakpoints (5 níveis) */
+@media (max-width: 1200px) {
+  .grid { grid-template-columns: repeat(10, 1fr); }
+}
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(8, 1fr); }
+}
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(6, 1fr); }
+}
+@media (max-width: 768px) {
+  .grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 480px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Cabeçalho */
+.site-header {
+  background: var(--color-neutral-100);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+/* Menu */
+/* Estilo padrão (desktop) */
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 16px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+
+.menu a:hover {
+  background: #00796b;
+  color: #fff;
+}
+
+/* Estilo mobile */
+@media (max-width: 768px) {
+  .menu {
+    display: none; /* 🔹 Esconde o menu por padrão no celular */
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 16px;
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  }
+
+  .menu.active {
+    display: flex; /* 🔹 Mostra o menu quando o botão é clicado */
+  }
+
+  .menu-toggle {
+    display: block; /* 🔹 Mostra o botão hambúrguer */
+  }
+}
+
+
+/* Rodapé */
+.site-footer {
+  border-top: 1px solid var(--color-neutral-200);
+  text-align: center;
+  padding: var(--space-3);
+  font-size: var(--fs-sm);
+  color: var(--color-neutral-700);
+}
+.menu-toggle {
+  display: block !important;
+  font-size: 2rem;
+  color: #00796b;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
